@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../styles/styles.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM Plex Mono:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken Grotesk:wght@400;500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap"
+    />
+  </head>
+  <body class=" bg-ghostwhite">
+   
+    <!-- #region Header-->
+    <header >
+      <div
+       class="pt-[2.0rem] px-[2.0rem]  flex flex-row   flex-grow items-center   text-neutral-600"
+      >
+     
+        <div>
+          <img class="h-8" src="../../public/logo2.svg" alt="Logo" />
+        </div>
+        <nav class="hidden md:flex flex-grow items-center justify-end">
+            <div class="flex flex-row p-[0.5rem] items-start justify-start">
+                <b class="relative leading-[150%]">What is ReflectCE</b>
+              </div>
+              <div class="flex flex-row p-[0.5rem] items-start justify-start">
+                <b class="relative leading-[150%]">How It Works</b>
+              </div>
+              <div class="flex flex-row p-[0.5rem] items-start justify-start">
+                <b class="relative leading-[150%]">FAQ</b>
+              </div>
+        </nav>
+        <div class="md:hidden flex flex-grow items-center justify-end">
+          <button
+            id="menuToggle"
+            type="button"
+            class="to-blue-400 hover:text-white focus:outline-none focus:text-white"
+          >
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden  text-neutral-600 bg-slate-50">
+        <div class="flex  items-start justify-start">
+            <b class="relative leading-[150%]">What is ReflectCE</b>
+          </div>
+          <div class="flex  items-start justify-start">
+            <b class="relative leading-[150%]">How It Works</b>
+          </div>
+          <div class="flex items-start justify-start">
+            <b class="relative leading-[150%]">FAQ</b>
+          </div>
+      </div>
+    </header>
+    <div
+          class=" flex flex-col pt-[2rem] sm:pt-[5rem] px-[2.0rem] sm:px-[5.0rem] pb-[0rem] box-border items-center"
+        >
+          <div class="flex flex-col items-center gap-4  ">
+            <div class="flex flex-col ">
+              <div
+                class=" flex flex-col gap-[2rem]"
+              >
+                <div class="justify-center text-center text-[2rem] sm:text-[4rem]">
+                  Self-directed reflective continuing education, designed to
+                  find busy learners where learning happens
+                </div>
+                <div
+                  class="justify-center text-center text-[1.25rem]"
+                >
+                  Powered by human-centric AI and a growing array of 5000+
+                  connectors to real-life (and work) learning contexts
+                </div>
+              </div>
+            </div>
+            <button
+              class="cursor-pointer [border:none] py-[1rem] px-[2rem] bg-primary-500 rounded-81xl flex flex-row items-center justify-start gap-[1rem]"
+              autofocus
+            >
+              <b
+                class="relative text-[1rem]  font-h3 text-whitesmoke-200 text-center"
+                >Learn more</b
+              >
+              <img
+                class="relative w-[1rem] h-[1rem]"
+                alt=""
+                src="../../public/arrowdown2.svg"
+              />
+            </button>
+          </div>
+          <div class="flex justify-center">
+            <div class="overflow-hidden">
+              <img class="max-w-full" alt="" src="../../public/frame-19.svg" />
+            </div>
+          </div>
+        </div>
+    <!-- #endregion Header-->
+   <!-- #region Header Script-->
+   <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+    <!-- #endregion Header Script-->
+
+  </body>
+</html>

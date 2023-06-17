@@ -1,8 +1,68 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}", "./!(build|dist|.*)/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        white: "#fff",
+        black: "#000",
+        "neutral-100": "#2d2c3f",
+        "neutral-600": "#7a7896",
+        "primary-500": "#7a71ef",
+        "secondary-500": "#53f7df",
+        "neutral-400": "#b8b6d1",
+        "primary-900": "#181730",
+        "neutral-300": "#dad8ed",
+        "neutral-700": "#5e5c78",
+        "primary-700": "#49448f",
+        "neutral-800": "#45435c",
+        "secondary-300": "#98faec",
+        ghostwhite: "#f1f0fb",
+        mediumturquoise: "#42c6b2",
+        blueviolet: "#6515dc",
+        turquoise: "#16dcbf",
+        whitesmoke: {
+          "100": "#f5f5f5",
+          "200": "#f3f3f3",
+        },
+        silver: "#b8b8b8",
+        tomato: "#ff5555",
+        mistyrose: "#ffdddd",
+        gainsboro: "#d9d9d9",
+        dimgray: "#6b6b6b",
+        darkslategray: {
+          "100": "#004e6f",
+          "200": "#024565",
+        },
+        lightcyan: "#defff7",
+      },
+      fontFamily: {
+        "ibm-plex-mono": "'IBM Plex Mono'",
+        inter: "Inter",
+        h3: "'Hanken Grotesk'",
+        inherit: "inherit",
+        montserrat: "Montserrat",
+        caveat: "Caveat",
+      },
+      borderRadius: {
+        "81xl": "100px",
+      },
+    },
+    fontSize: {
+      "13xl": "2rem",
+      "5xl": "1.5rem",
+      base: "1rem",
+      "21xl": "2.5rem",
+      "17xl": "2.25rem",
+      xl: "1.25rem",
+      "45xl": "4rem",
+      "29xl": "3rem",
+      "190xl-1": "13.07rem",
+      xs: "0.75rem",
+      "670xl-8": "43.11rem",
+    },
   },
-  plugins: [],
-}
+  corePlugins: {
+    preflight: false,
+  },
+};
