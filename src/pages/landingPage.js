@@ -233,6 +233,13 @@ async function initializePage() {
   // Rest of your code that depends on the page data
 else{
   console.log('outside data');
+  const JsonData = await import("../data/landingPage.js");
+  DataFound({footerData:JsonData.footerData,
+    whatisReflectCEData:JsonData.whatisReflectCEData,
+    cardDataHowDoesItWork:JsonData.cardDataHowDoesItWork,
+    faqData:JsonData.faqData,
+    mainCenterData:JsonData.mainCenterData,});
+
 }}
 initializePage();
-console.log('Firebase:', Firebase);
+console.log('Firebase: async call ', Firebase);
