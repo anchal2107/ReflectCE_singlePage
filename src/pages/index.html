@@ -74,6 +74,12 @@
               </style>
   </head>
   <body class="bg-ghostwhite">
+    <div id="loadingIndicator" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+      <div class="flex items-center justify-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-300"></div>
+        <span class="ml-2 text-white">Loading...</span>
+      </div>
+    </div>
     <div id="popupWindow" class="popup-window">
       <!-- Close button -->
       <button id="popupCloseButton" class="popup-close-button">×</button>

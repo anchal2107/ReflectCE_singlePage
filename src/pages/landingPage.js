@@ -22,6 +22,15 @@ console.log("Hello world!");
 //     console.log('div clicked');
 //     }
 // btn.addEventListener("click", onDivClick);
+var loadingIndicator = document.getElementById("loadingIndicator");
+
+function showLoadingIndicator() {
+  loadingIndicator.classList.remove("hidden");
+}
+
+function hideLoadingIndicator() {
+  loadingIndicator.classList.add("hidden");
+}
 function DataFound(firestoreData){
   console.log('firestoreData:22', firestoreData);
 
@@ -226,6 +235,7 @@ createFAQSections();
 
 let Firebase = null;
 async function initializePage() {
+  showLoadingIndicator();
   Firebase= await getPageData();
   console.log('Firebase:2', Firebase);
   if(Firebase !== null && Firebase.data !== null && Firebase.data.resultData != null && Firebase.data.resultData.length >0){
@@ -240,6 +250,9 @@ else{
     faqData:JsonData.faqData,
     mainCenterData:JsonData.mainCenterData,});
 
-}}
+}
+hideLoadingIndicator();
+
+}
 initializePage();
 console.log('Firebase: async call ', Firebase);
