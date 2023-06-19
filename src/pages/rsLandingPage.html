@@ -27,193 +27,443 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap"
     />
+    <style>
+      #cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
   </head>
-  <body class=" bg-ghostwhite">
-   
+  <body class="bg-ghostwhite">
     <!-- #region Header-->
-    <header >
-      <div
-       class="pt-[2.0rem] px-[2.0rem]  flex flex-row   flex-grow items-center   text-neutral-600"
-      >
-     
-        <div>
-          <img class="h-8" src="../../public/logo2.svg" alt="Logo" />
-        </div>
-        <nav class="hidden md:flex flex-grow items-center justify-end">
+    <div class="flex flex-col">
+      <header>
+        <div
+          class="pt-[2.0rem] px-[2.0rem] flex flex-row flex-grow items-center text-neutral-600"
+        >
+          <div>
+            <img class="h-8" src="../../public/logo2.svg" alt="Logo" />
+          </div>
+          <nav class="hidden md:flex flex-grow items-center justify-end">
             <div class="flex flex-row p-[0.5rem] items-start justify-start">
-                <b class="relative leading-[150%]">What is ReflectCE</b>
-              </div>
-              <div class="flex flex-row p-[0.5rem] items-start justify-start">
-                <b class="relative leading-[150%]">How It Works</b>
-              </div>
-              <div class="flex flex-row p-[0.5rem] items-start justify-start">
-                <b class="relative leading-[150%]">FAQ</b>
-              </div>
-        </nav>
-        <div class="md:hidden flex flex-grow items-center justify-end">
-          <button
-            id="menuToggle"
-            type="button"
-            class="to-blue-400 hover:text-white focus:outline-none focus:text-white"
-          >
-            <svg
-              class="h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              <b class="relative leading-[150%]">What is ReflectCE</b>
+            </div>
+            <div class="flex flex-row p-[0.5rem] items-start justify-start">
+              <b class="relative leading-[150%]">How It Works</b>
+            </div>
+            <div class="flex flex-row p-[0.5rem] items-start justify-start">
+              <b class="relative leading-[150%]">FAQ</b>
+            </div>
+          </nav>
+          <div class="md:hidden flex flex-grow items-center justify-end">
+            <button
+              id="menuToggle"
+              type="button"
+              class="to-blue-400 hover:text-white focus:outline-none focus:text-white"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+              <svg
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-        
-      </div>
-      <div id="mobileMenu" class="hidden md:hidden  text-neutral-600 bg-slate-50">
-        <div class="flex  items-start justify-start">
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden text-neutral-600 bg-slate-50"
+        >
+          <div class="flex items-start justify-start">
             <b class="relative leading-[150%]">What is ReflectCE</b>
           </div>
-          <div class="flex  items-start justify-start">
+          <div class="flex items-start justify-start">
             <b class="relative leading-[150%]">How It Works</b>
           </div>
           <div class="flex items-start justify-start">
             <b class="relative leading-[150%]">FAQ</b>
           </div>
-      </div>
-    </header>
-    <div
-          class=" flex flex-col pt-[2rem] sm:pt-[5rem] px-[2.0rem] sm:px-[5.0rem] pb-[0rem] box-border items-center"
-        >
-          <div class="flex flex-col items-center gap-4  ">
-            <div class="flex flex-col ">
+        </div>
+      </header>
+      <div
+        class="flex flex-col pt-[2rem] sm:pt-[5rem] px-[2.0rem] sm:px-[5.0rem] pb-[0rem] box-border items-center"
+      >
+        <div class="flex flex-col items-center gap-4">
+          <div class="flex flex-col">
+            <div class="flex flex-col gap-[2rem]">
               <div
-                class=" flex flex-col gap-[2rem]"
+                class="justify-center text-center text-[2rem] sm:text-[4rem]"
               >
-                <div class="justify-center text-center text-[2rem] sm:text-[4rem]">
-                  Self-directed reflective continuing education, designed to
-                  find busy learners where learning happens
-                </div>
-                <div
-                  class="justify-center text-center text-[1.25rem]"
-                >
-                  Powered by human-centric AI and a growing array of 5000+
-                  connectors to real-life (and work) learning contexts
-                </div>
+                Self-directed reflective continuing education, designed to find
+                busy learners where learning happens
+              </div>
+              <div class="justify-center text-center text-[1.25rem]">
+                Powered by human-centric AI and a growing array of 5000+
+                connectors to real-life (and work) learning contexts
               </div>
             </div>
-            <button
-              class="cursor-pointer [border:none] py-[1rem] px-[2rem] bg-primary-500 rounded-81xl flex flex-row items-center justify-start gap-[1rem]"
-              autofocus
+          </div>
+          <button
+            id="learnMoreButton"
+            class="cursor-pointer [border:none] py-[1rem] px-[2rem] bg-primary-500 rounded-81xl flex flex-row items-center justify-start gap-[1rem]"
+            autofocus
+          >
+            <b
+              class="relative text-[1rem] font-h3 text-whitesmoke-200 text-center"
+              >Learn more</b
             >
+            <img
+              class="relative w-[1rem] h-[1rem]"
+              alt=""
+              src="../../public/arrowdown2.svg"
+            />
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <div class="overflow-hidden">
+            <img class="max-w-full" alt="" src="../../public/frame-19.svg" />
+          </div>
+        </div>
+      </div>
+      <div
+        id="expand_learnMoreFirst"
+        class="flex bg-secondary-300"
+        style="display: block"
+      >
+        <div class="">
+          <div
+            class=" flex flex-col"
+          >
+       
+              <div class="  flex flex-col  gap-[2rem] text-[1.5rem] sm:text-[2rem] items-center justify-center p-3" id="whatisReflectCETitle">What is ReflectCE</div>
+              <div
+                class="flex-auto text-[1.25rem] py-8 px-8 text-center justify-betweew leading-[180%]  text-neutral-800 " id="whatisReflectCEDetails"
+              >
+              </div>
+            
+            <div
+              class="flex flex-wrap sm:flex-row text-left justify-center  text-primary-700 mx-10 sm:mx-0 gap-[2rem]" id="whatsisReflectCEsubCards"
+            >
+         <!-- Dynamic Loading data -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #endregion Header-->
+      <div class="flex flex-col items-center justify-start gap-[3.5rem] p-8">
+        <div class="text-[1rem] sm:text-[2rem]">How does it work</div>
+        <div
+          id="cardContainer"
+          class="flex flex-wrap gap-[2rem] justify-center"
+        >
+     
+        </div>
+
+       
+      </div>
+      <div class="bg-neutral-100  gap-8 p-8">
+        <h2 class="text-2xl text-white flex flex-col items-center justify-center">Frequently Asked Questions</h2>
+        <div id="faqContainer">
+
+            <!-- <div class="flex flex-col text-lg text-neutral-400" id="faqSection">
+                <div class="flex left-0 w-full py-4" id="faqQuetionButton">
+                  <div class="flex-1">
+                    <div class="flex items-center">
+                      <div class="text-white" id="faqQuetion">
+                        I have claimed ReflectCE credits, now how do I generate my certificate?
+                      </div>
+                      <div id="toggleButton" class="ml-auto">
+                        <img class="w-6 h-6 px-2" alt="" src="../../public/minus.svg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-full border-b border-solid border-neutral-600" id="faqDetails" hidden>
+                  <div class="p-4">
+                    <p>
+                      When you reflect, you’ll receive a link to your Learner Hub, where you can:
+                    </p>
+                    <ul class="pl-6">
+                      <li>See the total credits you’ve earned</li>
+                      <li>
+                        A timeline of all your contextualized reflections (and some exciting superpowers coming to help you analyze, share, boost & plan your learning impact for work + life)
+                      </li>
+                      <li>Generate certificates & transcripts based on your reflections</li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
+              
+            <!-- <div class="flex flex-col  text-lg text-neutral-400" id="faqSection">
+                <div class="flex left-0 w-full py-4" id="faqQuetionButton">
+                             <div class="flex-1 text-white" id="faqQuetion">
+                                  I have claimed ReflectCE credits, now how do I generate my certificate?
+                           </div>
+                          <div id="toggleButton">
+                           <img class="w-6 h-6 px-2" alt="" src="../../public/minus.svg" />
+            
+                       </div> 
+                         </div>
+                         <div class="w-full border-b border-solid border-neutral-600" id="faqDetails" hidden>
+                           <div class="p-4">
+                             <p>
+                               When you reflect, you’ll receive a link to your Learner Hub, where you can:
+                             </p>
+                             <ul class="pl-6">
+                               <li>See the total credits you’ve earned</li>
+                               <li>
+                                 A timeline of all your contextualized reflections (and some exciting superpowers coming to help you analyze, share, boost & plan your learning impact for work + life)
+                               </li>
+                               <li>Generate certificates & transcripts based on your reflections</li>
+                             </ul>
+                           </div>
+                         </div>
+                       </div> -->
+    </div>
+      </div>
+      
+      <!-- #region Header Script-->
+    </div>
+    <script type="module">
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      var learnMoreButton = document.getElementById("learnMoreButton");
+      var expandDiv = document.getElementById("expand_learnMoreFirst");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    //   var learnMoreButton = document.getElementById("learnMoreButton");
+    //   var expandDiv = document.getElementById("expand_learnMoreFirst");
+      var whatisReflectCEDetails = document.getElementById("whatisReflectCEDetails");
+      var whatisReflectCETitle = document.getElementById("whatisReflectCETitle");
+      var whatsisReflectCEsubCards = document.getElementById("whatsisReflectCEsubCards");
+   const whatisReflectCEData= {
+    title: "What is ReflectCE?",
+    details: `ReflectCE is an accredited activity that brings learners
+                right-place, right-time and self-directed reflective learning.
+                Powered by human-centric AI and a growing array of 5000+
+                connectors to real-life (and work) learning contexts, ReflectCE
+                helps busy learners ubiquitously capture self-evaluations that
+                described their understanding of an idea, assess its clinical
+                relevance or professional impact to performance and draw meaning
+                into clinical outcomes within their practice. In return,
+                reflections result in continuing education credit.`,
+    subCards:[
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+{title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
+    ]
+   }  
+                whatisReflectCEDetails.innerHTML=whatisReflectCEData.details;
+                whatisReflectCETitle.textContent=whatisReflectCEData.title;
+
+
+
+                whatisReflectCEData.subCards.forEach((card) => {
+        const cardHTML = `
+        <div class=" sm:w-[20.13rem] sm:h-[10.44rem]">
+                <div
+                  class="text-[1.5rem] sm:text-[2rem]"
+                >
+               ${card.title}
+                </div>
+                <div
+                  class="text-[1rem] leading-[180%] text-neutral-800 inline-block sm:w-[16.63rem]"
+                >
+                ${card.details}
+                </div>
+              </div>`;
+
+        // Append the card HTML to the card container
+        whatsisReflectCEsubCards.innerHTML += cardHTML;
+
+      });
+
+
+
+
+      // Add a click event listener to the button
+      learnMoreButton.addEventListener("click", function () {
+        console.log("click");
+        // Toggle the visibility of the target div
+        if (expandDiv.style.display === "none") {
+          expandDiv.style.display = "block";
+        } else {
+          expandDiv.style.display = "none";
+        }
+      });
+      const cardDataHowDoesItWork = [
+          {
+            id: 1,
+            title: "Discover 1",
+            description: "ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making...",
+          },
+          {
+            id: 2,
+            title: "Discover 2",
+            description: "ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making...",
+          },
+        // Add more card objects as needed
+      ];
+      const cardContainer = document.getElementById("cardContainer");
+  
+    const imageArrowRightPath = require('../../public/arrowright.svg');
+    window.showPopuOnHowDoesItWorkLearnMore = function(id) {
+  // Code to show the popup
+  // Replace the following line with your own popup logic
+  alert('Popup is shown! ' + id);
+};
+      // Loop through the card data and create HTML for each card
+      cardDataHowDoesItWork.forEach((card) => {
+        const cardHTML = `
+        <div
+            class="p-3 sm:w-[26.5rem] flex flex-col items-start justify-start gap-[1.5rem] border-[1px] border-solid border-neutral-300"
+          >
+            <!-- Box 1 content here -->
+            <div class="text-[1.5rem] sm:text-[ 2 rem]">${card.title}</div>
+            <div
+              class="self-stretch relative text-[1rem] leading-[180%] text-neutral-700 line-clamp-2"
+            >
+             ${card.description}
+            </div>
+            <button
+              class="cursor-pointer py-[1rem] px-[2rem] bg-[transparent] rounded-81xl flex flex-row items-center justify-start gap-[1rem] border-[1px] border-solid border-neutral-600"
+              onclick="showPopuOnHowDoesItWorkLearnMore(${card.id})"  >
               <b
-                class="relative text-[1rem]  font-h3 text-whitesmoke-200 text-center"
+                class="relative text-[1rem] leading-[150%] font-h3 text-neutral-100 text-center"
                 >Learn more</b
               >
               <img
                 class="relative w-[1rem] h-[1rem]"
                 alt=""
-                src="../../public/arrowdown2.svg"
+                src="${imageArrowRightPath}"
               />
             </button>
-          </div>
-          <div class="flex justify-center">
-            <div class="overflow-hidden">
-              <img class="max-w-full" alt="" src="../../public/frame-19.svg" />
-            </div>
-          </div>
-        </div>
-        <div id="expand_learnMoreFirst"
-        class="flex justify-center bg-secondary-300"
-      >
-        <div class="relative w-[90rem] h-[50.75rem] overflow-hidden">
-            <div
-              class="absolute top-[0rem] left-[calc(50%_-_720px)] flex flex-col py-[6.25rem] px-[7.5rem] items-center justify-start gap-[3.5rem]"
-            >
-              <div
-                class="w-[53.38rem] flex flex-col items-center justify-center gap-[2rem]"
-              >
-                <div class="self-stretch relative leading-[150%] font-medium">
-                  What is ReflectCE
-                </div>
-                <div
-                  class="self-stretch relative text-[1.25rem] leading-[180%] text-neutral-800"
-                >
-                  ReflectCE is an accredited activity that brings learners
-                  right-place, right-time and self-directed reflective learning.
-                  Powered by human-centric AI and a growing array of 5000+
-                  connectors to real-life (and work) learning contexts, ReflectCE
-                  helps busy learners ubiquitously capture self-evaluations that
-                  described their understanding of an idea, assess its clinical
-                  relevance or professional impact to performance and draw meaning
-                  into clinical outcomes within their practice. In return,
-                  reflections result in continuing education credit.
-                </div>
-              </div>
-              <div
-                class="flex flex-col sm:flex-row items-start justify-start gap-[1.31rem] text-left text-primary-700"
-              >
-                <div class="flex flex-col">
-                  <div
-                    class="font-medium"
-                  >
-                    250k+
-                  </div>
-                  <div
-                    class=" text-[1rem]  text-neutral-800 "
-                  >
-                    Reflections captured to date, with 2k+ new reflections being
-                    captured each week
-                  </div>
-          
-                </div>
-                <div class="relative w-[24.13rem] h-[15.44rem]">
-                  <div
-                    class="absolute top-[2.25rem] left-[3.5rem] leading-[150%] font-medium"
-                  >
-                    5+
-                  </div>
-                  <div
-                    class="absolute top-[7.5rem] left-[3.5rem] text-[1rem] leading-[180%] text-neutral-800 inline-block w-[16.63rem]"
-                  >
-                    On average, each learner reflection signals 5+
-                    clinically-relevant connections
-                  </div>
-     
-                </div>
-                <div class="relative w-[24.13rem] h-[15.44rem]">
-                  <div
-                    class="absolute top-[2.25rem] left-[3.5rem] leading-[150%] font-medium"
-                  >
-                    12+
-                  </div>
-                  <div
-                    class="absolute top-[7.5rem] left-[3.5rem] text-[1rem] leading-[180%] text-neutral-800 inline-block w-[16.63rem]"
-                  >
-                    Average ReflectCE learner reflects 12+ times across 4+
-                    different learning contexts
-                  </div>
-           
-                </div>
-              </div>
-            </div>
-         
-          </div></div>
-    <!-- #endregion Header-->
-   <!-- #region Header Script-->
-   <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
+          </div>`;
 
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        // Append the card HTML to the card container
+        cardContainer.innerHTML += cardHTML;
+
       });
+
+
+      const faqContainer = document.getElementById('faqContainer');
+
+// JSON data for FAQ
+const faqData = [
+  {
+    question: '1I have claimed ReflectCE credits, now how do I generate my certificate?',
+    details: ` <p>
+                When you reflect, you’ll receive a link to your Learner Hub, where you can:
+              </p>
+              <ul class="pl-6">
+                <li>See the total credits you’ve earned</li>
+                <li>
+                  A timeline of all your contextualized reflections (and some exciting superpowers coming to help you analyze, share, boost & plan your learning impact for work + life)
+                </li>
+                <li>Generate certificates & transcripts based on your reflections</li>
+              </ul>`
+  },
+  {
+    question: '2I have claimed ReflectCE credits, now how do I generate my certificate?',
+    details: '2When you reflect, you’ll receive a link to your Learner Hub, where you can:\n\n- See the total credits you’ve earned\n- A timeline of all your contextualized reflections (and some exciting superpowers coming to help you analyze, share, boost & plan your learning impact for work + life)\n- Generate certificates & transcripts based on your reflections'
+  },
+  {
+    question: '3I have claimed ReflectCE credits, now how do I generate my certificate?',
+    details: '2When you reflect, you’ll receive a link to your Learner Hub, where you can:\n\n- See the total credits you’ve earned\n- A timeline of all your contextualized reflections (and some exciting superpowers coming to help you analyze, share, boost & plan your learning impact for work + life)\n- Generate certificates & transcripts based on your reflections'
+  },
+  // Add more FAQ items as needed
+];
+// Function to create FAQ sections
+
+// <div class="flex flex-col items-center justify-center text-lg text-neutral-400">
+//           <div class="flex items-center justify-between w-full py-4">
+//             <div class="flex-1 text-white" id="faqQuetion">
+//                ${faq.question}
+//             </div>
+//            <div id="toggleButton">
+//             <img class="w-6 h-6" alt="" src="../../public/minus.svg" />
+            
+//             <img class="w-6 h-6" alt="" src="../../public/plus.svg" /></div> 
+//           </div>
+//           <div class="w-full border-b border-solid border-neutral-600" id="faqDetails">
+//             <div class="p-4">
+//               ${faq.details}
+//             </div>
+//           </div>
+//         </div>
+
+
+
+const imageMinusPath = require('../../public/minus.svg');
+const imagePlusPath = require('../../public/plus.svg');
+function createFAQSections() {
+  faqContainer.innerHTML = ''; // Clear existing content
+  
+  faqData.forEach((faq, index) => {
+    const faqSection = document.createElement('div');
+    faqSection.classList.add('faq-section','flex','flex-col','items-center','justify-center','text-lg','text-neutral-400');
+
+ 
+    
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('faq-question','flex-1', 'text-white');
+    questionElement.textContent = faq.question;
+
+    const toggleButton = document.createElement('div');
+    toggleButton.classList.add('toggle-button','p-2');
+
+    const minusIcon = document.createElement('img');
+    minusIcon.classList.add('toggle-icon','w-6','h-6');
+    minusIcon.src = imageMinusPath;
+
+    const plusIcon = document.createElement('img');
+    plusIcon.classList.add('toggle-icon','w-6','h-6', 'hidden');
+    plusIcon.src = imagePlusPath;
+
+    toggleButton.appendChild(minusIcon);
+    toggleButton.appendChild(plusIcon);
+
+    const questionContainer = document.createElement('div');
+    questionContainer.classList.add('flex', 'items-center', 'justify-between', 'w-full', 'py-4','text-[1rem]','sm:text-[1.5rem]');
+    questionContainer.appendChild(questionElement);
+    questionContainer.appendChild(toggleButton);
+
+    const detailsElement = document.createElement('div');
+    detailsElement.classList.add('faq-details','w-full','border-b','border-solid','border-neutral-600','p-4');
+    detailsElement.innerHTML = faq.details;
+
+    faqSection.appendChild(questionContainer);
+    faqSection.appendChild(detailsElement);
+
+    // Add event listener to toggle the FAQ details
+    toggleButton.addEventListener('click', () => {
+      detailsElement.classList.toggle('hidden');
+      minusIcon.classList.toggle('hidden');
+      plusIcon.classList.toggle('hidden');
+    });
+
+    faqContainer.appendChild(faqSection);
+  });
+}
+
+// Create FAQ sections
+createFAQSections();
+
+
     </script>
     <!-- #endregion Header Script-->
-
   </body>
 </html>
