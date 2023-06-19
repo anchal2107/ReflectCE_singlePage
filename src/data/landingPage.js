@@ -16,7 +16,6 @@ const footerData = {
     activityDetails: `     For Activity Details, please
               <span class="[text-decoration:underline]">visit this link</span>`
 }
-
 const whatisReflectCEData= {
     title: "What is ReflectCE",
     details: `ReflectCE is an accredited activity that brings learners
@@ -36,9 +35,8 @@ const whatisReflectCEData= {
 {title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
 {title:"250+",details:'Reflection capture points across 5000+ learning contexts'},
     ]
-   }  
-
-   const cardDataHowDoesItWork = [
+}  
+const cardDataHowDoesItWork = [
     {
       id: 1,
       title: "Discover 1",
