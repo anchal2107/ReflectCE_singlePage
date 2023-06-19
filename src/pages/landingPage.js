@@ -74,11 +74,32 @@ learnMoreButton.addEventListener("click", function () {
 const cardContainer = document.getElementById("cardContainer");
 
 const imageArrowRightPath = require("../../public/arrowright.svg");
-window.showPopuOnHowDoesItWorkLearnMore = function (id) {
-  // Code to show the popup
-  // Replace the following line with your own popup logic
-  alert("Popup is shown! " + id);
-};
+window.showPopuOnHowDoesItWorkLearnMore = showPopupCardShow;
+function showPopupCardShow(id) {
+  // alert("Popup is shown! " + id);
+  const popupWindow = document.getElementById('popupWindow');
+  const closeBtn = document.getElementById('popupCloseButton');
+  const bodyContainer = document.getElementById('bodyContainer');
+  const popWindowTitle = document.getElementById('popWindowTitle');
+  const popWindowDetails = document.getElementById('popWindowDetails');
+  const filteredCards = cardDataHowDoesItWork.filter(card => card.id === id);
+if(filteredCards.length > 0 && filteredCards[0] !== undefined && filteredCards[0].cardPop !== null){
+  popWindowTitle.innerHTML = filteredCards[0].cardPop.title;
+  popWindowDetails.innerHTML = filteredCards[0].cardPop.detail;
+}
+  // Show the popup window
+  popupWindow.style.display = 'block';
+
+  // Add blur effect to the background
+  bodyContainer.classList.add('blur-background');
+
+  // Close the popup window when the close button is clicked
+  closeBtn.addEventListener('click', () => {
+    popupWindow.style.display = 'none';
+    bodyContainer.classList.remove('blur-background');
+  });
+}
+
 // Loop through the card data and create HTML for each card
 cardDataHowDoesItWork.forEach((card) => {
   const cardHTML = `

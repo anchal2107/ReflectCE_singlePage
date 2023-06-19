@@ -40,10 +40,49 @@
                
                   /* background-color: purple; */
                 }
+                /* Add the following CSS to style the popup window */
+.popup-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+/* Add the following CSS to style the close button and blur effect */
+.popup-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+.blur-background {
+  filter: blur(3px);
+}
+
+
               </style>
   </head>
   <body class="bg-ghostwhite">
-    <!-- #region Header-->
+    <div id="popupWindow" class="popup-window">
+      <!-- Close button -->
+      <button id="popupCloseButton" class="popup-close-button">×</button>
+      
+      <!-- Popup content -->
+      <h3 id="popWindowTitle">Details Not Found</h3>
+      <p id="popWindowDetails">Server Error Details not found.</p>
+    </div>
+    <div id="bodyContainer">
     <div class="flex flex-col">
       <header>
         <div
@@ -244,8 +283,7 @@
           </div>
           
         </div>
-
-    </div>
+</div>
     <script type="module" src="landingPage.js"></script>
   </body>
 </html>

@@ -41,11 +41,19 @@ const cardDataHowDoesItWork = [
       id: 1,
       title: "Discover 1",
       description: "ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making...",
+      cardPop:{
+        title:"Discover 1",
+        detail:"ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making..."
+      }
     },
     {
       id: 2,
       title: "Discover 2",
       description: "ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making...",
+      cardPop:{
+        title:"Discover 2",
+        detail:"2 ReflectCE is designed on the principles of learner autonomy, contextual discovery, and supercharged meaning-making..."
+      }
     },
   // Add more card objects as needed
 ];
