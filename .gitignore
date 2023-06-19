@@ -5,3 +5,7 @@ package-lock.json
 dist/**/*.*
 node_modules/**/*.*
 node_modules/**/*
+.firebase/hosting.ZGlzdA.cache
+.DS_Store
+```**/**/.DS_Store
+```
