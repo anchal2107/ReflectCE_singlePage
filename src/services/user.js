@@ -4,7 +4,6 @@ import {
     readAllDocuments,
     updateDocumentFieldsOnDocId
   } from "../utils/firebase/firestore";
-  const collectionName = "landingPageData";
   const collectionUser = "users";
   async function getAllUsers() {
 
@@ -28,32 +27,10 @@ import {
       };
     }
   }
-  
-  async function getPageData() {
-    const resultData = await readAllDocuments(collectionName);
-    console.log('resultData:', resultData);
-    if (resultData) {
-      // Documents found
-      return {
-        code: "SUCCESS",
-        status: 200,
-        message: "Users Found",
-        data: { resultData },
-      };
-    } else {
-      // No documents found
-      return {
-        code: "SUCCESS",
-        status: 200,
-        message: "Users Not Found",
-        data: { resultData: null },
-      };
-    }
-  }
+
   
 
   module.exports = {
-    getPageData,
     getAllUsers
   };
   

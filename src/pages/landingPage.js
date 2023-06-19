@@ -1,29 +1,42 @@
 import "../styles/styles.css";
+// import {
+//   footerData,
+//   whatisReflectCEData,
+//   cardDataHowDoesItWork,
+//   faqData,
+//   mainCenterData,
+// } from "../data/landingPage.js";
 import {
-  footerData,
-  whatisReflectCEData,
-  cardDataHowDoesItWork,
-  faqData,
-  mainCenterData,
-} from "../data/landingPage.js";
+  getPageData
+} from "../services/fireStoreLandingPage.js";
+// import {
+//   getAllUsers
+// } from "../services/user";
 // var btn = document.getElementById("btn");
 console.log("Hello world!");
+
+
+// getAllUsers().then((res)=>console.log('res:', res))
+// getPageData().then((res)=>console.log('getPageData:', res))
 // const onDivClick = () => {
 //     console.log('div clicked');
 //     }
 // btn.addEventListener("click", onDivClick);
+function DataFound(firestoreData){
+  console.log('firestoreData:22', firestoreData);
+
 const mainTitle = document.getElementById("mainTitle");
 const mainDetails = document.getElementById("mainDetails");
-mainTitle.innerHTML = mainCenterData.title;
-mainDetails.innerHTML = mainCenterData.details;
+mainTitle.innerHTML = firestoreData.mainCenterData.title;
+mainDetails.innerHTML = firestoreData.mainCenterData.details;
 const footerDetails = document.getElementById("footerDetails");
 const footerCopyRight = document.getElementById("footerCopyRight");
 const footerContact = document.getElementById("footerContact");
 const footerActivity = document.getElementById("footerActivity");
-footerDetails.innerHTML = footerData.details;
-footerCopyRight.innerHTML = footerData.copyRight;
-footerContact.innerHTML = footerData.contact;
-footerActivity.innerHTML = footerData.activityDetails;
+footerDetails.innerHTML = firestoreData.footerData.details;
+footerCopyRight.innerHTML = firestoreData.footerData.copyRight;
+footerContact.innerHTML = firestoreData.footerData.contact;
+footerActivity.innerHTML = firestoreData.footerData.activityDetails;
 
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -38,10 +51,10 @@ var whatisReflectCETitle = document.getElementById("whatisReflectCETitle");
 var whatsisReflectCEsubCards = document.getElementById(
   "whatsisReflectCEsubCards"
 );
-whatisReflectCEDetails.innerHTML = whatisReflectCEData.details;
-whatisReflectCETitle.textContent = whatisReflectCEData.title;
+whatisReflectCEDetails.innerHTML = firestoreData.whatisReflectCEData.details;
+whatisReflectCETitle.textContent = firestoreData.whatisReflectCEData.title;
 
-whatisReflectCEData.subCards.forEach((card) => {
+firestoreData.whatisReflectCEData.subCards.forEach((card) => {
   const cardHTML = `
         <div class=" sm:w-[20.13rem] sm:h-[10.44rem]">
                 <div
@@ -82,7 +95,7 @@ function showPopupCardShow(id) {
   const bodyContainer = document.getElementById('bodyContainer');
   const popWindowTitle = document.getElementById('popWindowTitle');
   const popWindowDetails = document.getElementById('popWindowDetails');
-  const filteredCards = cardDataHowDoesItWork.filter(card => card.id === id);
+  const filteredCards = firestoreData.cardDataHowDoesItWork.filter(card => card.id === id);
 if(filteredCards.length > 0 && filteredCards[0] !== undefined && filteredCards[0].cardPop !== null){
   popWindowTitle.innerHTML = filteredCards[0].cardPop.title;
   popWindowDetails.innerHTML = filteredCards[0].cardPop.detail;
@@ -101,7 +114,7 @@ if(filteredCards.length > 0 && filteredCards[0] !== undefined && filteredCards[0
 }
 
 // Loop through the card data and create HTML for each card
-cardDataHowDoesItWork.forEach((card) => {
+firestoreData.cardDataHowDoesItWork.forEach((card) => {
   const cardHTML = `
         <div
             class="p-3 sm:w-[26.5rem] flex flex-col items-start justify-start gap-[1.5rem] border-[1px] border-solid border-neutral-300"
@@ -139,7 +152,7 @@ const imagePlusPath = require("../../public/plus.svg");
 function createFAQSections() {
   faqContainer.innerHTML = ""; // Clear existing content
 
-  faqData.forEach((faq, index) => {
+  firestoreData.faqData.forEach((faq, index) => {
     const faqSection = document.createElement("div");
     faqSection.classList.add(
       "faq-section",
@@ -209,3 +222,17 @@ function createFAQSections() {
 
 // Create FAQ sections
 createFAQSections();
+}
+
+let Firebase = null;
+async function initializePage() {
+  Firebase= await getPageData();
+  console.log('Firebase:2', Firebase);
+  if(Firebase !== null && Firebase.data !== null && Firebase.data.resultData != null && Firebase.data.resultData.length >0){
+  DataFound(Firebase.data.resultData[0].data )}
+  // Rest of your code that depends on the page data
+else{
+  console.log('outside data');
+}}
+initializePage();
+console.log('Firebase:', Firebase);
